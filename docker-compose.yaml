@@ -12,3 +12,4 @@ services:
       - .:/app
     environment:
       - REACT_APP_API_URL=http://181.214.140.244:8888
+    command: npm start
