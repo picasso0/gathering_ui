@@ -10,6 +10,7 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install --force
 
+RUN npm install react-scripts --force
 
 # Copy the entire project to the working directory
 COPY . .
@@ -18,4 +19,4 @@ COPY . .
 EXPOSE 3000
 
 # Start the React app
-CMD ["tail","-f","/dev/null"]
+CMD ["npm","start"]
