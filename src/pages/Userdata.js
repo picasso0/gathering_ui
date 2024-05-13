@@ -23,7 +23,7 @@ class Userdata extends React.Component {
       fetchData = async () => {
         const accessToken = localStorage.getItem('accessToken');
         try {
-          const response = await axios.get(`http://127.0.0.1:8888/userdatas/?page=${this.state.currentPage}&limit=${this.state.limit}`,{
+          const response = await axios.get(process.env.REACT_APP_API_URL + `/userdatas/?page=${this.state.currentPage}&limit=${this.state.limit}`,{
             headers: {
               Authorization: `Bearer ${accessToken}`,
             },

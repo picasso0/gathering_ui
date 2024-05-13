@@ -23,7 +23,7 @@ class Profiles extends React.Component {
      async get_profile(mobile) {
         const accessToken = localStorage.getItem('accessToken');
         try {
-          const response = await axios.get(`http://127.0.0.1:8888/profile/?mobile=${mobile}`,{
+          const response = await axios.get(process.env.REACT_APP_API_URL + `/profile/?mobile=${mobile}`,{
             headers: {
               Authorization: `Bearer ${accessToken}`,
             },
@@ -43,7 +43,7 @@ class Profiles extends React.Component {
       fetchData = async () => {
         const accessToken = localStorage.getItem('accessToken');
         try {
-          const response = await axios.get(`http://127.0.0.1:8888/profiles/?page=${this.state.currentPage}&limit=${this.state.limit}`,{
+          const response = await axios.get(process.env.REACT_APP_API_URL + `/profiles/?page=${this.state.currentPage}&limit=${this.state.limit}`,{
             headers: {
               Authorization: `Bearer ${accessToken}`,
             },

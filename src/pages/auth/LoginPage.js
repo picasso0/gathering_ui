@@ -19,7 +19,7 @@ class LoginPage extends React.Component {
     
         const { username, password } = this.state;
         try {
-            const response = await axios.post('http://127.0.0.1:8888/token/', { username, password });
+            const response = await axios.post(process.env.REACT_APP_API_URL + '/token/', { username, password });
       
             // Store the access token in local storage or a cookie
             localStorage.setItem('accessToken', response.data.access_token);

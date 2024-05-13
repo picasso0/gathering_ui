@@ -10,4 +10,4 @@ services:
     volumes:
       - .:/app
     environment:
-      - REACT_APP_API_URL=https://api.example.com
+      - REACT_APP_API_URL=http://181.214.140.244:8888

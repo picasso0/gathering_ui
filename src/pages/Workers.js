@@ -22,7 +22,7 @@ class Workers extends React.Component {
       async get_worker(id) {
         const accessToken = localStorage.getItem('accessToken');
         try {
-          const response = await axios.get(`http://127.0.0.1:8888/worker/?id=${id}`,{
+          const response = await axios.get(process.env.REACT_APP_API_URL + `/worker/?id=${id}`,{
             headers: {
               Authorization: `Bearer ${accessToken}`,
             },
@@ -43,7 +43,7 @@ class Workers extends React.Component {
       fetchData = async () => {
         const accessToken = localStorage.getItem('accessToken');
         try {
-          const response = await axios.get(`http://127.0.0.1:8888/workers/?page=${this.state.currentPage}&limit=${this.state.limit}`,{
+          const response = await axios.get(process.env.REACT_APP_API_URL + `/workers/?page=${this.state.currentPage}&limit=${this.state.limit}`,{
             headers: {
               Authorization: `Bearer ${accessToken}`,
             },

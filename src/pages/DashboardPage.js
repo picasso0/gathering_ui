@@ -7,11 +7,10 @@ class DashboardPage extends React.Component {
       data: null,
       loading: true
     };
-  
     async componentDidMount() {
       const accessToken = localStorage.getItem('accessToken');
       try {
-        const response = await axios.get('http://127.0.0.1:8888/dashboard/',{
+        const response = await axios.get(process.env.REACT_APP_API_URL + '/dashboard/',{
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
