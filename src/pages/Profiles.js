@@ -100,7 +100,7 @@ class Profiles extends React.Component {
                     <td>
                     {item.whatsapp_searching === 0 ? (
                          <span className="bg-primary">ready</span>
-                      ) : item.status === 1 ? (
+                      ) : item.whatsapp_searching === 1 ? (
                         <span className="bg-success">in searching</span>
                       ) : (
                         <span className="bg-danger">ready for first search</span>
