@@ -19,6 +19,7 @@ class Profiles extends React.Component {
   }
   handleCheckboxChange = (value) => {
     this.setState({ whatsapp_finded: value });
+    this.fetchData()
   };
   componentDidMount() {
     this.fetchData();
