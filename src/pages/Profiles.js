@@ -46,7 +46,7 @@ class Profiles extends React.Component {
   fetchData = async () => {
     const accessToken = localStorage.getItem('accessToken');
     try {
-      const response = await axios.get(process.env.REACT_APP_API_URL + `/profiles/?page=${this.state.currentPage}&limit=${this.state.limit}`, {
+      const response = await axios.get(process.env.REACT_APP_API_URL + `/profiles/?whatsapp_finded=${this.state.whatsapp_finded}&page=${this.state.currentPage}&limit=${this.state.limit}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -73,7 +73,7 @@ class Profiles extends React.Component {
 
 
   render() {
-    const { data, loading, currentPage, totalPages, profile } = this.state;
+    const { data, loading, currentPage, totalPages, profile, whatsapp_finded} = this.state;
 
     if (loading) {
       return <div>Loading...</div>;
@@ -81,13 +81,14 @@ class Profiles extends React.Component {
     return (
       <div>
         <div>
+          <span>whataspp result </span>
         <label>
-          <input
+          <input 
             type="checkbox"
             checked={this.state.whatsapp_finded === 'true'}
             onChange={() => this.handleCheckboxChange('true')}
           />
-          True
+          Finded
         </label>
         <label>
           <input
@@ -95,7 +96,7 @@ class Profiles extends React.Component {
             checked={this.state.whatsapp_finded === 'false'}
             onChange={() => this.handleCheckboxChange('false')}
         />
-          False
+          Not Finded
         </label>
         <label>
           <input
@@ -103,7 +104,7 @@ class Profiles extends React.Component {
             checked={this.state.whatsapp_finded === 'none'}
             onChange={() => this.handleCheckboxChange('none')}
           />
-          None
+          All
         </label>
       </div>
         <div className="d-flex text-muted">
