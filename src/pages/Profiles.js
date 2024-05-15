@@ -103,7 +103,7 @@ class Profiles extends React.Component {
                       ) : (
                         item.status === 1 ? (
                           <span className="bg-success">in searching</span>
-                        ) : <span className="bg-danger">failed</span>
+                        ) : <span className="bg-danger">ready for first search</span>
                       )}
                     </td>
                     <td>
