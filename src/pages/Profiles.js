@@ -59,7 +59,7 @@ class Profiles extends React.Component {
       });
     } catch (error) {
       console.error('Error fetching data:', error);
-      window.location.href = '/login';
+      // window.location.href = '/login';
       this.setState({
         loading: false
       });
