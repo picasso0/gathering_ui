@@ -11,12 +11,15 @@ class Profiles extends React.Component {
       data: [],
       loading: true,
       currentPage: 1,
+      whatsapp_finded: undefined,
       totalPages: 1,
       limit: 10,
       profile: {}
     };
   }
-
+  handleCheckboxChange = (value) => {
+    this.setState({ whatsapp_finded: value });
+  };
   componentDidMount() {
     this.fetchData();
   }
@@ -77,7 +80,32 @@ class Profiles extends React.Component {
     }
     return (
       <div>
-        {console.log(this.state)}
+        <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={this.state.whatsapp_finded === 'true'}
+            onChange={() => this.handleCheckboxChange('true')}
+          />
+          True
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            checked={this.state.whatsapp_finded === 'false'}
+            onChange={() => this.handleCheckboxChange('false')}
+        />
+          False
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            checked={this.state.whatsapp_finded === 'none'}
+            onChange={() => this.handleCheckboxChange('none')}
+          />
+          None
+        </label>
+      </div>
         <div className="d-flex text-muted">
           <table className="table">
             <thead>
