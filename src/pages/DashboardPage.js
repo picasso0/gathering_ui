@@ -47,7 +47,7 @@ class DashboardPage extends React.Component {
           </div>
         </div>
         <div className="col-xl-3 col-sm-6 mb-3">
-          <div className="card text-white bg-warning o-hidden h-100">
+          <div className="card text-white bg-info o-hidden h-100">
             <div className="card-body">
               <div className="card-body-icon d-flex">
                 <i className="m-1 fa fa-fw fa-user"></i>
@@ -61,11 +61,25 @@ class DashboardPage extends React.Component {
           </div>
         </div>
         <div className="col-xl-3 col-sm-6 mb-3">
+          <div className="card text-white bg-primary o-hidden h-100">
+            <div className="card-body">
+              <div className="card-body-icon d-flex">
+                <i className="m-1 fa fa-fw fa-user"></i>
+                <h2>whatsapp searched profiles</h2>
+              </div>
+              <div className="mr-5">
+                {data.whatsapp_searched_profiles}
+                </div>
+            </div>
+           
+          </div>
+        </div>
+        <div className="col-xl-3 col-sm-6 mb-3">
           <div className="card text-white bg-success o-hidden h-100">
             <div className="card-body">
               <div className="card-body-icon d-flex">
                 <i className="fa fa-fw m-1 fa-whatsapp"></i>
-                <h2>whatsapp profiles</h2>
+                <h2>whatsapp finded profiles</h2>
               </div>
               <div className="mr-5">
               <div className="mr-5">
@@ -76,7 +90,7 @@ class DashboardPage extends React.Component {
           </div>
         </div>
         <div className="col-xl-3 col-sm-6 mb-3">
-          <div className="card text-white bg-danger o-hidden h-100">
+          <div className="card text-white bg-info o-hidden h-100">
             <div className="card-body">
               <div className="card-body-icon d-flex">
                 <i className="fa m-1 fa-fw fa-chrome"></i>
