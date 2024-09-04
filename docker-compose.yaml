@@ -1,14 +1,28 @@
 version: '3'
 
 services:
-  ui:
-    container_name: ui
+  c2:
+    container_name: gathering_backend
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: backend/Dockerfile
     ports:
-      - "3000:3000"
+      - 8888:8888
+    volumes:
+      - ./:/app
+    environment:
+      - TOKEN=test
+      - WORKER_PORT=8000
+  ui:
+    container_name: gathering_ui
+    build:
+      context: .
+      dockerfile: ui/Dockerfile.dev
+    ports:
+      - "3003:3000"
     volumes:
       - .:/app
     environment:
       - REACT_APP_API_URL=http://181.214.140.244:8888
+  
+  
